@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!linkTema) return;
 
         // Alterna o arquivo CSS entre modo claro e escuro
-        linkTema.href = tema === 'dark' ? '../css/DarkMode.css' : '../css/styles.css';
+        linkTema.href = tema === 'dark' ? 'css/DarkMode.css' : 'css/styles.css';
         // Salva a preferência do usuário no navegador
         localStorage.setItem('tema', tema);
 
