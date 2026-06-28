@@ -1,0 +1,342 @@
+/* ===== TEMA CLARO ===== */
+/* Estilos para o modo claro da aplicação */
+
+/* Importa fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+/* Define variáveis CSS de cores e estilos globais */
+:root {
+    /* Cores de fundo e superfícies */
+    --bg:          #f5f6fa;
+    --surface:     #ffffff;
+    --surface-alt: #eef0f8;
+    --border:      #dde1ef;
+    
+    /* Cores de destaque e acentos */
+    --accent:      #4f6ef7;
+    --accent-dark: #3a57d4;
+    --accent-muted:#e8ecfe;
+    
+    /* Cores de texto */
+    --text-primary:#1a1d2e;
+    --text-body:   #3d4155;
+    --text-muted:  #7b80a0;
+    
+    /* Cores de feedback */
+    --success:     #1aab6d;
+    --error:       #e03b3b;
+    
+    /* Estilo e animações */
+    --radius:      10px;
+    --shadow:      0 2px 12px rgba(79,110,247,.10);
+    --shadow-md:   0 4px 24px rgba(79,110,247,.15);
+    --font-sans:   'Inter', system-ui, sans-serif;
+    --font-mono:   'JetBrains Mono', monospace;
+    --transition:  .2s ease;
+}
+
+
+/* Reset global para todos os elementos */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Suaviza o scroll da página */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilos principais do corpo da página */
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg);
+    color: var(--text-body);
+    line-height: 1.7;
+    padding: 32px 20px 60px;
+    max-width: 800px;
+    margin: 0 auto;
+    /* Transição suave ao mudar de tema */
+    transition: background-color var(--transition), color var(--transition);
+}
+
+
+/* Estilo do título principal da página */
+#titulo {
+    font-family: var(--font-sans);
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -.03em;
+    padding: 18px 24px;
+    margin: 0 0 32px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+/* Pseudo-elemento do título (ícone de código) */#titulo::before {
+    content: '</>';
+    font-family: var(--font-mono);
+    font-size: .55em;
+    font-weight: 600;
+    color: var(--accent);
+    background: var(--accent-muted);
+    padding: 4px 8px;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+
+/* Estilo dos títulos secundários */
+.titulo {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -.02em;
+    margin: 40px 0 16px;
+}
+
+
+/* Estilo dos parágrafos e textos */
+.paragrafo,
+body > p,
+body div > p {
+    font-size: 1rem;
+    color: var(--text-body);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 22px;
+    margin: 0 0 18px;
+    box-shadow: var(--shadow);
+    line-height: 1.8;
+}
+
+
+/* Estilos dos heading tags */
+/* H2 - Seções principais */
+h2 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 28px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+}
+
+/* H3 - Subseções com destaque */
+h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0 0 6px;
+}
+
+/* H4 - Subtítulos pequenos */
+h4 {
+    font-size: .95rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    margin: 20px 0 8px;
+}
+
+
+/* Estilos de listas */
+/* Remove estilo padrão e organiza em coluna */
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0 0 28px;
+    padding: 0;
+}
+
+/* Estilo dos itens da lista */
+ul li {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    box-shadow: var(--shadow);
+    position: relative;
+    padding-left: 42px;
+}
+
+/* Bullet point customizado para cada item */
+ul li::before {
+    content: '▸';
+    position: absolute;
+    left: 16px;
+    color: var(--accent);
+    font-size: .85rem;
+}
+
+/* Parágrafos dentro dos itens da lista */
+ul li p {
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 6px 0 0;
+    margin: 0;
+    font-size: .93rem;
+    color: var(--text-muted);
+}
+
+
+/* Estilos gerais de botões */
+button,
+input[type="submit"] {
+    font-family: var(--font-sans);
+    font-size: .9rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    border-radius: var(--radius);
+    padding: 10px 20px;
+    /* Transições suaves para efeitos hover */
+    transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+/* Estilo do botão de navegação 'Sobre' */
+#sobreButton,
+button#sobreButton {
+    background: var(--surface);
+    color: var(--accent);
+    border: 1.5px solid var(--accent);
+    margin: 4px 6px 4px 0;
+    /* Botões de navegação ficam lado a lado */
+    display: inline-block;
+}
+
+/* Efeito hover para o botão Sobre */
+#sobreButton:hover {
+    background: var(--accent-muted);
+    box-shadow: var(--shadow);
+    transform: translateY(-1px);
+}
+
+/* Estilo do botão de alternância de tema */
+#botaoTema {
+    background: var(--accent);
+    color: #fff;
+    margin: 0 6px 28px 0;
+    box-shadow: var(--shadow);
+    /* Botão de tema fica isolado (quebra de linha) */
+    display: block;
+}
+
+#botaoTema:hover {
+    background: var(--accent-dark);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+}
+
+input[type="submit"] {
+    background: var(--accent);
+    color: #fff;
+    padding: 10px 28px;
+    box-shadow: var(--shadow);
+}
+
+input[type="submit"]:hover {
+    background: var(--accent-dark);
+    transform: translateY(-1px);
+}
+
+
+#formContato {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+#formContato label {
+    font-size: .85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    margin-top: 10px;
+}
+
+#formContato input[type="text"],
+#formContato input[type="email"],
+#formContato textarea {
+    font-family: var(--font-sans);
+    font-size: .95rem;
+    color: var(--text-primary);
+    background: var(--bg);
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    width: 100%;
+    transition: border-color var(--transition), box-shadow var(--transition);
+    resize: vertical;
+    outline: none;
+    margin-top: 4px;
+}
+
+#formContato input:focus,
+#formContato textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-muted);
+}
+
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    font-family: var(--font-mono);
+    font-size: .88em;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--accent-dark);
+}
+
+
+#mensagemSucesso {
+    font-weight: 500;
+    border-radius: 8px;
+    padding: 12px 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+}
+
+
+@media (max-width: 520px) {
+    body { padding: 16px 12px 48px; }
+    #titulo { font-size: 1.5rem; padding: 14px 16px; }
+    #formContato { padding: 18px; }
+    
+    /* Botões de navegação ficam lado a lado no mobile com menos espaço */
+    #sobreButton {
+        margin: 4px 4px 4px 0;
+        padding: 8px 12px;
+        font-size: .8rem;
+    }
+    
+    /* Botão de tema fica separado com quebra de linha */
+    #botaoTema {
+        margin: 0 0 20px 0;
+        width: 100%;
+        padding: 10px 20px;
+    }
+}
