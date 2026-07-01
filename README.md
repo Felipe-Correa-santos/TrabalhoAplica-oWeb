@@ -1,6 +1,6 @@
 ## Trabalho de Aplicação Web
 
-Este projeto foi desenvolvido como trabalho acadêmico da disciplina de Desenvolvimento Web, com o objetivo de aplicar os conceitos fundamentais de HTML e CSS na criação de um site pessoal.
+Este projeto foi desenvolvido como trabalho acadêmico da disciplina de Desenvolvimento Web, com o objetivo de aplicar os conceitos fundamentais de HTML e CSS e javaScript na criação de um site pessoal.
 
 O site apresenta informações sobre o autor, sua formação acadêmica e uma página de contato, utilizando uma interface simples, organizada e responsiva para proporcionar uma boa experiência de navegação.
 
